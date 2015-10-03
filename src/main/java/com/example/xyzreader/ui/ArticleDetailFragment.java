@@ -198,8 +198,8 @@ public class ArticleDetailFragment extends Fragment implements
                             Bitmap bitmap = imageContainer.getBitmap();
                             if (bitmap != null) {
                                 Palette p = Palette.generate(bitmap, 12);
-                                mDarkVibrantColor = p.getDarkVibrantColor(0xFF333333);
-                                mVibrantColor = p.getVibrantColor(0xFF333333);
+                                mDarkVibrantColor = p.getDarkVibrantColor(p.getDarkMutedColor(0xFF333333));
+                                mVibrantColor = p.getVibrantColor(p.getMutedColor(0xFF888888));
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
                                 mRootView.findViewById(R.id.meta_bar)
                                         .setBackgroundColor(mDarkVibrantColor);
